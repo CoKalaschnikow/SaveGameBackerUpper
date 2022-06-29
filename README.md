@@ -150,7 +150,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Discord - Maistaa#7108
 
-Any Issues? Share them with me: [here]([https://github.com/github_username/repo_name](https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues)
+Any Issues? Share them with me: [https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues](https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
