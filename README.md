@@ -148,9 +148,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Discord - Maistaa#7108
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Any Issues? Share them with me: [https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
