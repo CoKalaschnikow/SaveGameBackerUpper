@@ -36,9 +36,6 @@
   <p align="center">
     Simple BATCH Script to Backup Save Games
     <br />
-    <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper">View Demo</a>
     ·
     <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues">Report Bug</a>
