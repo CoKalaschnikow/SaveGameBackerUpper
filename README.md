@@ -38,14 +38,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues">Request Feature</a>
   </p>
 </div>
 
