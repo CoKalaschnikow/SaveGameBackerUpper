@@ -112,6 +112,11 @@ Run "SaveGameBackerUpper.bat"  and press "2" to choose the option "Add a Game to
 Now enter the Name of the Game you want to backup, after that you will be prompted to choose the Location of the SaveGames for your Game.
 After you have done this this Game will now be backed up Daily.
 
+### Manual Backup
+
+Run "SaveGameBackerUpper.bat"  and press "1" to choose the option "Backup now".
+This will instantly Backup all of your SaveGames that you added to the GameList
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
