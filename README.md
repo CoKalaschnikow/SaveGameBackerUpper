@@ -87,7 +87,7 @@ Follow the Installation Steps to begin Backing up your goddamn Save Games,
 
 ### Installation
 
-1. Download the Release at [RELEASES](https://example.com](https://github.com/CoKalaschnikow/SaveGameBackerUpper/releases/tag/Release)
+1. Download the Release at [RELEASES](https://github.com/CoKalaschnikow/SaveGameBackerUpper/releases/tag/Release)
 
 2. Extract the Contents into any Folder of your liking
 
