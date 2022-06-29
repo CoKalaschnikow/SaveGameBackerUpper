@@ -103,9 +103,15 @@ Follow the Installation Steps to begin Backing up your goddamn Save Games,
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### First Run
+Run "SaveGameBackerUpper.bat" and follow the Setup.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Adding a Game
+
+Run "SaveGameBackerUpper.bat"  and press "2" to choose the option "Add a Game to the List".
+Now enter the Name of the Game you want to backup, after that you will be prompted to choose the Location of the SaveGames for your Game.
+After you have done this this Game will now be backed up Daily.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
