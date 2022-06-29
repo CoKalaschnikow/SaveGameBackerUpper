@@ -34,7 +34,7 @@
 <h3 align="center">SaveGameBackerUpper</h3>
 
   <p align="center">
-    project_description
+    Simple BATCH Script to Backup Save Games
     <br />
     <a href="https://github.com/CoKalaschnikow/SaveGameBackerUpper"><strong>Explore the docs »</strong></a>
     <br />
@@ -55,9 +55,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
