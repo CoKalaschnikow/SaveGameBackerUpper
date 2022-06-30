@@ -1,0 +1,19 @@
+::-----DeleteSave---------------------------------
+
+:DeleteSave
+set mypath=%~dp0
+%mypath:~0,1%:
+cd %mypath:~0,-1%
+SET /P AREYOUSURE=Do you want to delete the Game List? (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO ChooseOption
+set /p BackupFolder=<config.cfg
+%BackupFolder:~0,1%:
+cd %BackupFolder%
+del GameList.bat
+CLS
+echo Game List has been deleted.
+timeout 2 /nobreak > NUL
+cd..
+goto ChooseOption
+
+::------------------------------------------------

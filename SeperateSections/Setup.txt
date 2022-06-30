@@ -1,0 +1,43 @@
+goto check_Permissions
+if %errorLevel% == 0 goto warning
+
+::-----First-------------------------------------
+::-----Check if program has ran before-----------
+
+:begin
+
+
+if not exist version.txt goto setup
+if exist version.txt goto mover
+
+::-----
+
+:mover
+     set /p FirstRun=<version.txt
+
+     if %FirstRun%==1.0 (goto ChooseOption) else (goto setup)
+::------------------------------------------------
+
+
+::-----Setup--------------------------------------
+
+:setup
+     cls
+	echo "Setup"
+setlocal
+
+set "psCommand="(new-object -COM 'Shell.Application')^
+.BrowseForFolder(0,'Select where Backups will be stored',0,0).self.path""
+
+for /f "usebackq delims=" %%I in (`powershell %psCommand%`) do set "folder=%%I"
+
+setlocal enabledelayedexpansion
+endlocal
+echo %folder%> config.cfg
+echo 1.0> version.txt
+set /p y=<version.txt 
+if not exist %folder%\GameList.bat copy NUL %folder%\GameList.bat
+
+SCHTASKS /CREATE /SC DAILY /TN "Daily-SaveGame-Backups" /TR "%folder%\GameList.bat" /ST 16:00 /f  
+
+::------------------------------------------------

@@ -1,0 +1,18 @@
+::-----FactoryReset-------------------------------
+
+:DeleteAll
+CLS
+:PROMPT
+set mypath=%~dp0
+%mypath:~0,1%:
+cd %mypath:~0,-1%
+SET /P AREYOUSURE=Do you want to completly reset the program? (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO ChooseOption
+set /p BackupFolder=<config.cfg
+del config.cfg
+del version.txt
+rmdir %BackupFolder% /s /q
+SCHTASKS /DELETE /TN "Daily-SaveGame-Backups" /f
+goto Shutdown
+
+::------------------------------------------------

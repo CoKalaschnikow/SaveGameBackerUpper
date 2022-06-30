@@ -1,0 +1,28 @@
+::-----AddGame------------------------------------
+
+:AddingGame
+     set mypath=%~dp0
+     %mypath:~0,1%:
+     cd %mypath:~0,-1%
+     cls
+     set /p BackupFolder=<config.cfg
+     if not exist %BackupFolder%\ mkdir %BackupFolder%\
+     if not exist %BackupFolder%\GameList.bat copy NUL %BackupFolder%\GameList.bat
+     cls
+     echo "Input the Name of the Game"
+     set /p GameName=" "
+     echo ::%GameName%::>> %BackupFolder%\GameList.bat
+     set GameName=%GameName: =%
+setlocal
+
+set "psCommand="(new-object -COM 'Shell.Application')^
+.BrowseForFolder(0,'Select Location of the Save Games',0,0).self.path""
+
+for /f "usebackq delims=" %%I in (`powershell %psCommand%`) do set "GameLocation=%%I"
+
+setlocal enabledelayedexpansion
+endlocal
+echo robocopy %GameLocation% %BackupFolder%\%GameName%>> %BackupFolder%\GameList.bat /E
+goto ChooseOption
+
+::------------------------------------------------

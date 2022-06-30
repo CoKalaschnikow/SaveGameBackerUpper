@@ -1,0 +1,14 @@
+::-----CallBackup---------------------------------
+
+:InstantBackup 
+set mypath=%~dp0
+%mypath:~0,1%:
+cd %mypath:~0,-1% 
+set /p BackupFolder=<config.cfg
+%BackupFolder:~0,1%:
+cd %BackupFolder%
+call GameList.bat
+cd..
+goto ChooseOption
+
+::------------------------------------------------

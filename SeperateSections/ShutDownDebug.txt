@@ -1,0 +1,23 @@
+::-----Shutdown/Debug-----------------------------
+
+:Shutdown
+exit
+
+:Debug
+set mypath=%~dp0
+%mypath:~0,1%:
+cd %mypath:~0,-1%
+set /p BackupFolder=<config.cfg
+echo ------------------------------------------------
+echo Debug Menu
+echo Current Backup Folder
+echo %BackupFolder%
+echo .
+echo .
+echo .
+echo Program Files
+dir /s /b /o:gn
+pause
+goto ChooseOption
+
+::------------------------------------------------

@@ -1,0 +1,17 @@
+::-----PermCheck----------------------------------
+
+:check_Permissions
+echo Detecting permissions...
+
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    cls
+    echo Do not run random things as administrator! Please run this without administrator rights.
+    TIMEOUT 10
+    exit
+) else (
+     cls
+     goto begin
+)
+
+::------------------------------------------------

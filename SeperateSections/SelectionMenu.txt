@@ -1,0 +1,71 @@
+::-----SelectionMenu------------------------------
+
+:ChooseOption:
+CLS
+call :echo-align center "***************************************"
+call :echo-align center "SaveGameBackerUpper by Costa"
+call :echo-align center "***************************************"
+ECHO 1.Backup now
+ECHO 2.Add a Game to the List
+ECHO 3.Delete GameList(No Game will be backed up anymore)
+ECHO 4.Reset to default(Will not delete SaveGames)
+ECHO 5.Move Backup Folder
+ECHO 6.Delete a Game from the List
+ECHO 7.Exit
+::ECHO 8.Debug
+ECHO.
+
+CHOICE /C 12345678 /N /M "Enter your choice:"
+
+IF ERRORLEVEL 8 GOTO Debug
+IF ERRORLEVEL 7 GOTO Shutdown
+IF ERRORLEVEL 6 GOTO RemoveSingle
+IF ERRORLEVEL 5 GOTO MoveBackup
+IF ERRORLEVEL 4 GOTO DeleteAll
+IF ERRORLEVEL 3 GOTO DeleteSave
+IF ERRORLEVEL 2 GOTO AddingGame
+IF ERRORLEVEL 1 GOTO InstantBackup
+
+::------------------------------------------------
+
+
+::-----AlignText---------------------------------
+
+:echo-align <align> <text>
+	setlocal EnableDelayedExpansion
+	(set^ tmp=%~2)
+	if defined tmp (
+		set "len=1"
+		for %%p in (4096 2048 1024 512 256 128 64 32 16 8 4 2 1) do (
+			if "!tmp:~%%p,1!" neq "" (
+				set /a "len+=%%p"
+				set "tmp=!tmp:~%%p!"
+			)
+		)
+	) else (
+		set len=0
+	)
+
+	for /f "skip=4 tokens=2 delims=:" %%i in ('mode con') do (
+		set /a cols=%%i
+		goto loop_end
+	)
+	:loop_end
+
+	if /i "%1" equ "center" (
+		set /a offsetnum=^(%cols% / 2^) - ^(%len% / 2^)
+		set "offset="
+		for /l %%i in (1 1 !offsetnum!) do set "offset=!offset! "
+	) else if /i "%1" equ "right" (
+		set /a offsetnum=^(%cols% - %len%^)
+		set "offset="
+		for /l %%i in (1 1 !offsetnum!) do set "offset=!offset! "
+	)
+
+	echo %offset%%~2
+	endlocal
+
+	exit /b
+
+::------------------------------------------------
+

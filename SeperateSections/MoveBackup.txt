@@ -1,0 +1,37 @@
+::-----MoveBackup---------------------------------
+
+:MoveBackup
+set mypath=%~dp0
+%mypath:~0,1%:
+cd %mypath:~0,-1%
+set /p BackupFolder=<config.cfg
+setlocal
+
+set "psCommand="(new-object -COM 'Shell.Application')^
+.BrowseForFolder(0,'Select new Location of the Backup Folder',0,0).self.path""
+
+for /f "usebackq delims=" %%I in (`powershell %psCommand%`) do set "NewBackup=%%I"
+set NewBackup=%NewBackup: =%
+echo %NewBackup%
+del config.cfg
+echo %NewBackup%> config.cfg
+robocopy %BackupFolder% %NewBackup% /e /move
+SCHTASKS /DELETE /TN "Daily-SaveGame-Backups" /f
+SCHTASKS /CREATE /SC DAILY /TN "Daily-SaveGame-Backups" /TR "%NewBackup%\GameList.bat" /ST 16:00
+%NewBackup:~0,1%:
+cd %NewBackup%
+    setlocal enableextensions disabledelayedexpansion
+
+    set "search=%BackupFolder%"
+    set "replace=%NewBackup%"
+
+    set "textFile=GameList.bat"
+
+    for /f "delims=" %%i in ('type "%textFile%" ^& break ^> "%textFile%" ') do (
+        set "line=%%i"
+        setlocal enabledelayedexpansion
+        >>"%textFile%" echo(!line:%search%=%replace%!
+        endlocal
+    )
+cd..
+goto ChooseOption
