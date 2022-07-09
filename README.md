@@ -137,6 +137,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Discord - Maistaa#7108
 
 Any Issues? Share them with me: [https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues](https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues)
+
 Small info: I have never "coded" anything, so expect some Bugs.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
