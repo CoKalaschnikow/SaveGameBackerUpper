@@ -134,7 +134,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Discord - Maistaa#7108
 
 Any Issues? Share them with me: [https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues](https://github.com/CoKalaschnikow/SaveGameBackerUpper/issues)
 
